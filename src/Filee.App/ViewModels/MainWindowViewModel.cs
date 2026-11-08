@@ -68,12 +68,9 @@ public sealed partial class MainWindowViewModel : ObservableObject, IDisposable
         RefreshVersionTexts();
         Items =
         [
-            new("home", "nav.home", "Icon.Home", typeof(HomePageViewModel)),
-            new("general", "nav.general", "Icon.Settings", typeof(GeneralPageViewModel)),
             new("triggers", "nav.triggers", "Icon.Keyboard", typeof(TriggersPageViewModel)),
             new("toolbar", "nav.toolbar", "Icon.Donut", typeof(ToolbarPageViewModel)),
             new("presets", "nav.presets", "Icon.Tune", typeof(PresetsPageViewModel)),
-            new("fields", "nav.fields", "Icon.Shapes", typeof(FieldsPageViewModel)),
             new("theme", "nav.theme", "Icon.Palette", typeof(ThemePageViewModel)),
         ];
         foreach (var item in Items)
