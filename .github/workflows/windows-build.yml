@@ -1,0 +1,20 @@
+name: Windows build (ZAIN)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build the app
+        shell: pwsh
+        run: dotnet publish src/Filee.App/Filee.App.csproj -c Release -r win-x64 --self-contained true -o publish
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ZAIN-win-x64
+          path: publish
